@@ -6,8 +6,10 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        y, z = abs(x), 0
+        if x < 0:
+            return False
+        y, z = x, 0
         while y != 0:
             z = z * 10 + y % 10
             y = y / 10
-        return z == abs(x)
+        return z == x
