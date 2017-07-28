@@ -7,7 +7,7 @@ class ListNode(object):
         self.next = None
 
 
-def test_letterCombinations():
+def test_removeNthFromEnd():
     s = Solution()
     head = current = ListNode(0)
     for x in [1, 2, 3, 4, 5]:
