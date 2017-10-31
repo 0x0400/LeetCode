@@ -1,5 +1,6 @@
 from p26 import Solution
 
+
 def test_removeDuplicates():
     s = Solution()
 
