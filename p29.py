@@ -23,23 +23,24 @@ class Solution(object):
             positive = -positive
             divisor = -divisor
 
+        if dividend < divisor:
+            return 0
+
         if divisor == 1:
             times = dividend * positive
             if times > 2147483647 or times < -2147483648:
                 return 2147483647
 
         multiple_list = [Multiple(1, divisor)]
-        def rdivde(dividend, divisor):
-            if dividend < divisor:
-                return 0
-            while multiple_list[-1].value < dividend:
-                max = multiple_list[-1]
-                mul = Multiple(max.times + max.times, max.value + max.value)
-                multiple_list.append(mul)
-            for mul in reversed(multiple_list):
-                if mul.value <= dividend:
-                    times = mul.times
-                    left = dividend - mul.value
-                    break
-            return times + rdivde(left, divisor)
-        return rdivde(dividend, divisor) * positive
+        while multiple_list[-1].value < dividend:
+            max = multiple_list[-1]
+            mul = Multiple(max.times + max.times, max.value + max.value)
+            multiple_list.append(mul)
+
+        times = 0
+        left = dividend
+        for mul in reversed(multiple_list):
+            while left >= mul.value:
+                times += mul.times
+                left -= mul.value
+        return times * positive
