@@ -90,3 +90,6 @@ ENV/
 
 # vs code
 .vscode
+
+# pipenv
+Pipfile*
