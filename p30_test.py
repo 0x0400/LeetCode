@@ -1,5 +1,7 @@
 from p30 import Solution as Solution
 from p30_v2 import Solution as Solution2
+from p30_v3 import Solution as Solution3
+
 
 
 test_cases = [
@@ -16,5 +18,10 @@ def test_findSubstring():
 
 def test_findSubstring_v2():
     s = Solution2()
+    for case in test_cases:
+        assert s.findSubstring(case[0], case[1]) == case[2]
+
+def test_findSubstring_v3():
+    s = Solution3()
     for case in test_cases:
         assert s.findSubstring(case[0], case[1]) == case[2]
