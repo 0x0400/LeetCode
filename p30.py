@@ -24,7 +24,6 @@ class Solution(object):
             j = i
             while left_words:
                 substr = s[j:j+word_len]
-                print(i, j, substr, left_words)
                 if substr in left_words:
                     left_words.remove(substr)
                     j += word_len
