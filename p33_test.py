@@ -1,4 +1,5 @@
 from p33 import Solution as Solution
+from p33_v2 import Solution as Solution2
 
 
 test_cases = [
@@ -13,4 +14,7 @@ def test_search():
     for case in test_cases:
         assert s.search(case[0], case[1]) == case[2]
 
-
+def test_search_v2():
+    s = Solution2()
+    for case in test_cases:
+        assert s.search(case[0], case[1]) == case[2]
