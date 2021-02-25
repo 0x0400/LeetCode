@@ -1,4 +1,5 @@
 from p48 import Solution
+from p48 import Solution as SolutionV2
 
 
 test_cases = [
@@ -12,5 +13,14 @@ test_cases = [
 def test_rotate():
     s = Solution()
     for case in test_cases:
-        s.rotate(case[0])
-        assert case[0] == case[1], case
+        src = [row.copy() for row in case[0]]
+        s.rotate(src)
+        assert src == case[1], case
+
+
+def test_rotateV2():
+    s = SolutionV2()
+    for case in test_cases:
+        src = [row.copy() for row in case[0]]
+        s.rotate(src)
+        assert src == case[1], case
