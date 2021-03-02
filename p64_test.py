@@ -9,4 +9,4 @@ test_cases = [
 def test_minPathSum():
     s = Solution()
     for case in test_cases:
-        assert s.minPathSum(case[0]) == case[1], case
+        assert s.minPathSumV2(case[0]) == case[1], case
