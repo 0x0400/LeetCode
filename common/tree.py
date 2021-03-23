@@ -46,3 +46,19 @@ def getListFromTree(head: TreeNode):
     if rst and rst[-1] is None:
         rst.pop()
     return rst
+
+def getListFromTreeV2(head: TreeNode):
+    rst = []
+    queue = [head]
+    while queue and queue.count(None) != len(queue):
+        node = queue.pop(0)
+        if node is None:
+            rst.append(None)
+            continue
+
+        rst.append(node.val)
+        queue.append(node.left if node.left else None)
+        queue.append(node.right if node.right else None)
+    if rst and rst[-1] is None:
+        rst.pop()
+    return rst
