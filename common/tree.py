@@ -17,7 +17,7 @@ def buildTreeFromList(vals):
     nodes = [head]
     for idx, val in enumerate(vals[1:]):
         if val is None:
-            if idx%2 != 1:
+            if idx%2 == 1:
                 nodes.pop(0)
             continue
         curNode = TreeNode(val)
