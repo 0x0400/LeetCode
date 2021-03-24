@@ -62,3 +62,37 @@ def getListFromTreeV2(head: TreeNode):
     if rst and rst[-1] is None:
         rst.pop()
     return rst
+
+
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+    # def __str__(self):
+    #     return "Node<{}>".format(self.val)
+
+def buildNAryTreeFromList(vals):
+    if not vals:
+        return None
+
+    root = None
+    queue = []
+    curChildren = []
+    for val in vals:
+        if val is not None:
+            node = Node(val)
+            curChildren.append(node)
+            queue.append(node)
+            continue
+        else:
+            if not root:
+                root = curChildren[0]
+            else:
+                parent = queue.pop(0)
+                parent.children = curChildren
+            curChildren = []
+    if curChildren and queue:
+        queue[0].children = curChildren
+    return root
