@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+# https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 
 # Definition for a Node.
 class Node:
@@ -8,6 +8,7 @@ class Node:
         self.right = right
         self.next = next
 
+# 与 p116 一样的解法
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
