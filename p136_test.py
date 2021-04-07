@@ -10,3 +10,8 @@ def test_singleNumber():
     s = Solution()
     for case in test_cases:
         assert s.singleNumber(case[0]) == case[1], case
+
+def test_singleNumberV2():
+    s = Solution()
+    for case in test_cases:
+        assert s.singleNumberV2(case[0]) == case[1], case
