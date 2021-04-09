@@ -9,7 +9,7 @@ from common.linked_list import ListNode
 #         self.next = None
 
 class Solution:
-    def hasCycle(self, head: ListNode) -> bool:
+    def detectCycle(self, head: ListNode) -> ListNode:
         visited = {}
         idx = 0
         curNode = head
