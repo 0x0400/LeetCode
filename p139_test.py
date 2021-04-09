@@ -7,6 +7,6 @@ test_cases = [
 ]
 
 def test_wordBreak():
-    s = Solution()
     for case in test_cases:
+        s = Solution()
         assert s.wordBreak(*case[0]) == case[1], case
