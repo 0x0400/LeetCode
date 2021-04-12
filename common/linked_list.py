@@ -12,3 +12,11 @@ def getLinkedList(nums):
         node = ListNode(val, lastNode)
         lastNode = node
     return lastNode
+
+def getListFromLinkedList(head: 'ListNode'):
+    rst = []
+    curNode = head
+    while curNode:
+        rst.append(curNode.val)
+        curNode = curNode.next
+    return rst
