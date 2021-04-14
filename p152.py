@@ -30,3 +30,13 @@ class Solution:
         for p in plans:
             curMaxProduct = max(curMaxProduct, p)
         return curMaxProduct
+
+    def maxProductV2(self, nums: List[int]) -> int:
+        curMinVal = curMaxVal = maxVal = nums[0]
+        for num in nums[1:]:
+            if num < 0:
+                curMaxVal, curMinVal = curMinVal, curMaxVal
+            curMaxVal = max(num, curMaxVal * num)
+            curMinVal = min(num, curMinVal * num)
+            maxVal = max(curMaxVal, maxVal)
+        return maxVal
