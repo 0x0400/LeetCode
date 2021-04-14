@@ -12,3 +12,7 @@ def test_findMin():
         s = Solution()
         assert s.findMin(case[0]) == case[1], case
 
+def test_findMinV2():
+    for case in test_cases:
+        s = Solution()
+        assert s.findMinV2(case[0]) == case[1], case

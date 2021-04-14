@@ -18,3 +18,10 @@ class Solution:
         if nums[middle] < nums[start]:
             return self.findMinInRange(nums, start, middle)
         return nums[start]
+
+    def findMinV2(self, nums: List[int]) -> int:
+        val = nums[0]
+        for curVal in nums:
+            if curVal < val:
+                return curVal
+        return val
