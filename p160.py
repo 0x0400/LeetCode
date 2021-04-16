@@ -31,3 +31,37 @@ class Solution:
             rst.append(head)
             head = head.next
         return rst
+
+
+    def getIntersectionNodeV2(self, headA: ListNode, headB: ListNode) -> ListNode:
+        if not headA or not headB:
+            return None
+
+        lenA = self.getNodeLen(headA)
+        lenB = self.getNodeLen(headB)
+
+        if lenA > lenB:
+            headA = self.skipNNode(headA, lenA - lenB)
+        elif lenB > lenA:
+            headB = self.skipNNode(headB, lenB - lenA)
+
+        while headA and headB:
+            if headA == headB:
+                return headA
+            headA = headA.next
+            headB = headB.next
+        return None
+
+    def getNodeLen(self, head: ListNode) -> int:
+        cnt = 0
+        while head:
+            cnt += 1
+            head = head.next
+        return cnt
+
+    def skipNNode(self, head: ListNode, n: int) -> ListNode:
+
+        while n > 0:
+            n -= 1
+            head = head.next
+        return head
