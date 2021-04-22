@@ -14,3 +14,8 @@ def test_majorityElementV2():
     for case in test_cases:
         s = Solution()
         assert s.majorityElementV2(case[0]) == case[1], case
+
+def test_majorityElementV3():
+    for case in test_cases:
+        s = Solution()
+        assert s.majorityElementV3(case[0]) == case[1], case
