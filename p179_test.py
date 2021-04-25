@@ -13,3 +13,8 @@ def test_largestNumber():
     for case in test_cases:
         s = Solution()
         assert s.largestNumber(case[0]) == case[1], case
+
+def test_largestNumberV2():
+    for case in test_cases:
+        s = Solution()
+        assert s.largestNumberV2(case[0]) == case[1], case
