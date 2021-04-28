@@ -11,4 +11,5 @@ def test_rangeBitwiseAnd():
     s = Solution()
     for case in test_cases:
         # assert s.rangeBitwiseAnd(*case[0]) == case[1], case
-        assert s.rangeBitwiseAndV2(*case[0]) == case[1], case
+        # assert s.rangeBitwiseAndV2(*case[0]) == case[1], case
+        assert s.rangeBitwiseAndV3(*case[0]) == case[1], case

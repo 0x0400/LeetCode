@@ -23,3 +23,19 @@ class Solution:
         val = 2 ** leftLog
         return val + self.rangeBitwiseAndV2(left-val, right-val)
 
+    def rangeBitwiseAndV3(self, left: int, right: int) -> int:
+        if left == 0:
+            return 0
+
+        leftStr = bin(left)[2:]
+        rightStr = bin(right)[2:]
+        if len(leftStr) != len(rightStr):
+            return 0
+
+        rst = 0
+        for i in range(0, len(leftStr)):
+            if leftStr[i] == rightStr[i]:
+                rst = (rst << 1) + int(leftStr[i])
+            else:
+                return rst << (len(leftStr)-i)
+        return rst
