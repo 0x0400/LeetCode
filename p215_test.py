@@ -9,3 +9,8 @@ def test_findKthLargest():
     s = Solution()
     for case in test_cases:
         assert s.findKthLargest(*case[0]) == case[1], case
+
+def test_findKthLargestQS():
+    s = Solution()
+    for case in test_cases:
+        assert s.findKthLargestQS(*case[0]) == case[1], case
